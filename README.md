@@ -5,21 +5,16 @@ Docker image with [flake8](http://flake8.pycqa.org/en/latest/) python linter.
 
 ### Usage
 
-* docker cli
+* Docker
 
 ```
-docker run --rm \
-    -v /myscripts:/scripts \
-    -v /.flake8/.flake8 \
-    hoto/flake8:3.0.4 \
-    flake8 /scripts
+docker run -v $(pwd)/scripts:/scripts hoto/flake8:3.0.4 /scripts
 ```
 
-* docker-compose
-
-`docker-compose.yml`
+* Docker Compose
 
 ```yaml
+#docker-compose.yml
 version: '2'
 
 services:
@@ -32,10 +27,11 @@ services:
       - ./tests:/tests
       - ./.flake8:/.flake8
 ```
-      
+
 * Gitlab CI Runner
 
 ```yaml
+#.gitlab-ci.yml
 lint:
   image: hoto/flake8:3.0.4
   stage: lint
