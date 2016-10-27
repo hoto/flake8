@@ -1,0 +1,9 @@
+#This file is used by Docker Hub to run a test suite
+
+version: '2'
+
+services:
+
+  sut:
+    build: .
+    command: flake8 --version

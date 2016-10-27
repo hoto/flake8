@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+
+  flake8:
+    image: hoto/flake8:latest
+    build: .
+    command: flake8 --version
