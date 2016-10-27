@@ -11,7 +11,7 @@ Docker image with [flake8](http://flake8.pycqa.org/en/latest/) python linter.
 docker run --rm \
     -v /myscripts:/scripts \
     -v /.flake8/.flake8 \
-    hoto/flake8:3.04 \
+    hoto/flake8:3.0.4 \
     flake8 /scripts
 ```
 
@@ -37,7 +37,7 @@ services:
 
 ```yaml
 lint:
-  image: hoto/flake8:3.04
+  image: hoto/flake8:3.0.4
   stage: lint
   tags:
     - dind
